@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم التفاعلية: علم البصريات الوراثي | Optoacademy</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Arabic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0e17',
+                            card: '#111827',
+                            border: '#1f2937',
+                            cyan: '#06b6d4',
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                            accent: '#38bdf8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #070a12;
+            color: #f3f4f6;
+            font-family: 'Tajawal', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+        }
+        
+        .glow-blue {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #67e8f9 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #06b6d4;
+            border-radius: 3px;
+        }
+
+        @keyframes pulse-light {
+            0%, 100% { opacity: 0.3; transform: scale(0.98); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-light 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between custom-scrollbar">
+
+    <!-- Header / Navbar -->
+    <header class="glass-panel sticky top-0 z-50 border-b border-gray-800/80 px-4 lg:px-8 py-3">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <!-- Logo & Title -->
+            <div class="flex items-center gap-3">
+                <div class="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-600 via-blue-600 to-indigo-600 text-white font-bold text-xl shadow-lg glow-cyan">
+                    <i class="fa-solid fa-eye-low-vision text-2xl"></i>
+                    <span class="absolute -bottom-1 -right-1 flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                    </span>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-black text-2xl tracking-wider text-white">Opto<span class="text-cyan-400">academy</span></span>
+                        <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/50 font-medium">سلسلة البصريات الحديثة</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-0.5">لوحة التحكم التفاعلية: علم البصريات الوراثي (Optogenetics)</p>
+                </div>
+            </div>
+
+            <!-- External Links & Author Badge -->
+            <div class="flex flex-wrap items-center gap-2.5">
+                <!-- Main Optoacademy Platform Link -->
+                <a href="http://28x2q5jzn6k5.space.minimax.io/?fbclid=IwVERDUAU2JvVleHRuA2FlbQIxMABwZG9mAXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHvXmLN2UxVbH1eBgx8b5hlVxJL1H_FaibCDBPQe2q2a4RxJ65687LLJgqC0H_aem_HYXS9g3kA_dU8U90UI9enQ" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl border border-cyan-400/30 transition shadow-lg shadow-cyan-600/20">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>منصة الأكاديمية</span>
+                </a>
+
+                <!-- Facebook Page Link -->
+                <a href="https://www.facebook.com/share/1H9mBXNV8p/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-blue-600/20 hover:bg-blue-600/40 text-blue-300 text-xs font-bold px-3 py-2 rounded-xl border border-blue-500/30 transition">
+                    <i class="fa-brands fa-facebook text-sm"></i>
+                    <span class="hidden sm:inline">صفحة الفيسبوك</span>
+                </a>
+
+                <!-- Author & Metadata Badge -->
+                <div class="flex items-center gap-2.5 bg-slate-900/90 border border-gray-800 px-3.5 py-1.5 rounded-xl">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs shadow">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-[10px] text-gray-400 block">إعداد وتطوير:</span>
+                        <span class="text-xs font-bold text-cyan-300">أخصائية البصريات: رشا حسن</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto w-full px-4 lg:px-8 py-6 flex-grow space-y-6">
+
+        <!-- Hero Title & Quick KPI Metrics -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+            
+            <!-- Hero Statement Box -->
+            <div class="lg:col-span-2 glass-panel p-6 rounded-2xl relative overflow-hidden flex flex-col justify-between border-r-4 border-r-cyan-500">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-3">
+                        <i class="fa-solid fa-award text-yellow-400"></i> تتويج عام 2026
+                    </div>
+                    <h1 class="text-2xl lg:text-3xl font-extrabold text-white leading-snug">
+                        علم البصريات الوراثي: <span class="text-gradient-cyan">ثورة التحكم في الدماغ بالضوء</span>
+                    </h1>
+                    <p class="text-sm text-gray-300 mt-2 leading-relaxed">
+                        تقنية حيوية نالت جائزة نوبل في الطب لتجميعها بين علوم البصريات والوراثة لتحويل الخلايا العصبية لخلية استجابة ضوئية فائقة الدقة.
+                    </p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-400">
+                    <span class="bg-gray-800/80 px-2.5 py-1 rounded-lg border border-gray-700/50"><i class="fa-solid fa-dna text-cyan-400 ml-1.5"></i>تعديل جيني</span>
+                    <span class="bg-gray-800/80 px-2.5 py-1 rounded-lg border border-gray-700/50"><i class="fa-solid fa-bolt text-yellow-400 ml-1.5"></i>تحفيز بالمللي ثانية</span>
+                    <span class="bg-gray-800/80 px-2.5 py-1 rounded-lg border border-gray-700/50"><i class="fa-solid fa-eye text-blue-400 ml-1.5"></i>استعادة البصر</span>
+                </div>
+            </div>
+
+            <!-- KPI Card 1: Nobel 2026 -->
+            <div class="glass-panel p-5 rounded-2xl flex flex-col justify-between hover:border-cyan-500/50 transition-all">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-gray-400">جائزة نوبل في الطب</span>
+                    <div class="w-8 h-8 rounded-lg bg-yellow-500/10 text-yellow-400 flex items-center justify-center">
+                        <i class="fa-solid fa-trophy text-sm"></i>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="text-3xl font-black text-white">2026</div>
+                    <p class="text-xs text-gray-400 mt-1">تتويج رواد إضاءة الأعصاب (ناغل، هيغمان، دايصروث)</p>
+                </div>
+                <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-yellow-500 to-amber-300 h-full w-full"></div>
+                </div>
+            </div>
+
+            <!-- KPI Card 2: Precision Speed -->
+            <div class="glass-panel p-5 rounded-2xl flex flex-col justify-between hover:border-cyan-500/50 transition-all">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-gray-400">دقة السرعة الزمانية</span>
+                    <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                        <i class="fa-solid fa-stopwatch text-sm"></i>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="text-3xl font-black text-cyan-400">&lt; 1 ms</div>
+                    <p class="text-xs text-gray-400 mt-1">استجابة فورية بالأجزاء من الألف من الثانية</p>
+                </div>
+                <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-cyan-400 h-full w-4/5 animate-pulse"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Interactive Navigation Tabs -->
+        <div class="flex items-center gap-2 border-b border-gray-800 pb-2 overflow-x-auto custom-scrollbar">
+            <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn active text-sm font-bold px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap bg-cyan-600 text-white shadow-lg shadow-cyan-600/30">
+                <i class="fa-solid fa-circle-info"></i> النظرة العامة والرواد
+            </button>
+            <button onclick="switchTab('mechanism')" id="tab-mechanism" class="tab-btn text-sm font-medium px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap bg-slate-900 text-gray-400 hover:text-white hover:bg-slate-800">
+                <i class="fa-solid fa-diagram-project"></i> خطوات الآلية (4 الخطوات)
+            </button>
+            <button onclick="switchTab('simulator')" id="tab-simulator" class="tab-btn text-sm font-medium px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap bg-slate-900 text-gray-400 hover:text-white hover:bg-slate-800">
+                <i class="fa-solid fa-microscope text-cyan-400"></i> المحاكي التفاعلي (المفتاح الضوئي)
+            </button>
+            <button onclick="switchTab('clinical')" id="tab-clinical" class="tab-btn text-sm font-medium px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap bg-slate-900 text-gray-400 hover:text-white hover:bg-slate-800">
+                <i class="fa-solid fa-notes-medical"></i> التطبيقات السريرية واستعادة البصر
+            </button>
+            <button onclick="switchTab('comparison')" id="tab-comparison" class="tab-btn text-sm font-medium px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap bg-slate-900 text-gray-400 hover:text-white hover:bg-slate-800">
+                <i class="fa-solid fa-scale-balanced"></i> المقارنة والتسلسل الزمني
+            </button>
+            <button onclick="switchTab('quiz')" id="tab-quiz" class="tab-btn text-sm font-medium px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 whitespace-nowrap bg-slate-900 text-gray-400 hover:text-white hover:bg-slate-800">
+                <i class="fa-solid fa-graduation-cap text-yellow-400"></i> اختبر معلوماتك
+            </button>
+        </div>
+
+        <!-- TAB 1: Overview & Nobel Laureates -->
+        <div id="content-overview" class="tab-content space-y-6">
+            
+            <!-- Definition Formula Graphic -->
+            <div class="glass-panel p-6 rounded-2xl border border-cyan-500/20">
+                <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-calculator text-cyan-400"></i> معادلة البصريات الوراثية (Optogenetics Formula)
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center text-center">
+                    
+                    <!-- Component 1 -->
+                    <div class="p-4 bg-slate-900/80 rounded-xl border border-gray-800 hover:border-cyan-500/40 transition">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-2">
+                            <i class="fa-regular fa-lightbulb"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-amber-300">علم البصريات (Optics)</h3>
+                        <p class="text-xs text-gray-400 mt-1">استخدام الضوء والومضات الدقيقة كأداة تحكم</p>
+                    </div>
+
+                    <div class="text-2xl font-black text-cyan-400">+</div>
+
+                    <!-- Component 2 -->
+                    <div class="p-4 bg-slate-900/80 rounded-xl border border-gray-800 hover:border-cyan-500/40 transition">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-2">
+                            <i class="fa-solid fa-dna"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-emerald-300">علم الوراثة (Genetics)</h3>
+                        <p class="text-xs text-gray-400 mt-1">تعديل جيني للخلايا لتصبح حساسة ومستجيبة للضوء</p>
+                    </div>
+
+                    <div class="text-2xl font-black text-cyan-400">=</div>
+
+                    <!-- Result -->
+                    <div class="p-4 bg-gradient-to-br from-cyan-950 to-blue-950 rounded-xl border border-cyan-500/50 glow-cyan">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center text-xl mb-2">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-cyan-300">تحكم عصبي فائق الدقة</h3>
+                        <p class="text-xs text-gray-300 mt-1">تنشيط أو تثبيط خلايا محددة في الدماغ الحي بومضات ضوئية</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Nobel Laureates 2026 -->
+            <div>
+                <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-user-gear text-yellow-400"></i> العلماء الفائزون بجائزة نوبل في الطب 2026
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- Laureate 1 -->
+                    <div class="glass-panel p-5 rounded-2xl relative overflow-hidden border hover:border-yellow-500/50 transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-yellow-500/40 flex items-center justify-center text-2xl text-yellow-400 font-bold">
+                                GN
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base text-white">جورج ناغل</h3>
+                                <p class="text-xs text-cyan-400 font-medium">(Georg Nagel)</p>
+                                <span class="text-xs text-gray-400 block mt-1"><i class="fa-solid fa-building-columns ml-1"></i>جامعة فورتسبورغ</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-300 mt-4 leading-relaxed bg-slate-900/60 p-3 rounded-xl border border-gray-800">
+                            ساهم في اكتشاف بروتينات "القناة الرودوبسينية" (Channelrhodopsin) في الطحالب وفهم عملها كقنوات أيونية حساسة للضوء.
+                        </p>
+                    </div>
+
+                    <!-- Laureate 2 -->
+                    <div class="glass-panel p-5 rounded-2xl relative overflow-hidden border hover:border-yellow-500/50 transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-yellow-500/40 flex items-center justify-center text-2xl text-yellow-400 font-bold">
+                                PH
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base text-white">بيتر هيغمان</h3>
+                                <p class="text-xs text-cyan-400 font-medium">(Peter Hegemann)</p>
+                                <span class="text-xs text-gray-400 block mt-1"><i class="fa-solid fa-building-columns ml-1"></i>جامعة هومبولت</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-300 mt-4 leading-relaxed bg-slate-900/60 p-3 rounded-xl border border-gray-800">
+                            رائد الاستجابات الضوئية في الطحالب واكتشاف الآليات الجزيئية للبروتينات المستجيبة للضوء وتحويلها لمفاتيح جزيئية.
+                        </p>
+                    </div>
+
+                    <!-- Laureate 3 -->
+                    <div class="glass-panel p-5 rounded-2xl relative overflow-hidden border hover:border-yellow-500/50 transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-yellow-500/40 flex items-center justify-center text-2xl text-yellow-400 font-bold">
+                                KD
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base text-white">كارل دايصروث</h3>
+                                <p class="text-xs text-cyan-400 font-medium">(Karl Deisseroth)</p>
+                                <span class="text-xs text-gray-400 block mt-1"><i class="fa-solid fa-building-columns ml-1"></i>جامعة ستانفورد</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-300 mt-4 leading-relaxed bg-slate-900/60 p-3 rounded-xl border border-gray-800">
+                            قاد الإنجاز الحاسم بعام 2005 بنقل الجينات للثدييات وجعل الخلايا العصبية تعمل بإشارة ضوئية بدقة مللي ثانية.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TAB 2: 4-Step Mechanism -->
+        <div id="content-mechanism" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-cyan-500/20">
+                <h2 class="text-xl font-extrabold text-white mb-2">الآلية: من الطحالب الدقيقة إلى التحكم العصبي في 4 خطوات</h2>
+                <p class="text-xs text-gray-400 mb-6">اضغط على أي خطوة للاطلاع على الشرح والتفاصيل الدقيقة لها</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    
+                    <!-- Step 1 -->
+                    <div onclick="highlightStep(1)" id="step-card-1" class="step-card p-5 rounded-xl bg-slate-900 border border-cyan-500 cursor-pointer hover:bg-slate-800 transition">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm">1</span>
+                            <i class="fa-solid fa-seedling text-emerald-400 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-white mb-1">الطحالب الخضراء (Algae)</h3>
+                        <p class="text-xs text-gray-400">اكتشاف بروتين Opsin الحساس للضوء في طحالب وحيدة الخلية.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div onclick="highlightStep(2)" id="step-card-2" class="step-card p-5 rounded-xl bg-slate-900/60 border border-gray-800 cursor-pointer hover:bg-slate-800 transition">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center text-sm">2</span>
+                            <i class="fa-solid fa-scissors text-blue-400 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-white mb-1">العزل الجيني (Gene Isolation)</h3>
+                        <p class="text-xs text-gray-400">استخراج الجين المسؤول عن تشفير وتصنيع بروتين الأوبسين.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div onclick="highlightStep(3)" id="step-card-3" class="step-card p-5 rounded-xl bg-slate-900/60 border border-gray-800 cursor-pointer hover:bg-slate-800 transition">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center text-sm">3</span>
+                            <i class="fa-solid fa-virus text-purple-400 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-white mb-1">النواقل الفيروسية (Viral Vectors)</h3>
+                        <p class="text-xs text-gray-400">استخدام فيروسات آمنة (AAV) لنقل الجين إلى خلايا مستهدفة.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div onclick="highlightStep(4)" id="step-card-4" class="step-card p-5 rounded-xl bg-slate-900/60 border border-gray-800 cursor-pointer hover:bg-slate-800 transition">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 font-bold flex items-center justify-center text-sm">4</span>
+                            <i class="fa-solid fa-wand-magic-sparkles text-cyan-400 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-white mb-1">التحفيز الضوئي (Light Stimulation)</h3>
+                        <p class="text-xs text-gray-400">تسليط ضوء أزرق عبر ألياف بصرية لتنشيط/تثبيط الخلية فوراً.</p>
+                    </div>
+
+                </div>
+
+                <!-- Dynamic Step Detail Panel -->
+                <div id="step-detail-box" class="mt-6 p-5 bg-slate-950 rounded-xl border border-cyan-500/40 flex items-start gap-4">
+                    <div id="step-detail-icon" class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <div>
+                        <h4 id="step-detail-title" class="font-bold text-base text-cyan-300">الخطوة 1: الطحالب الخضراء وحيدة الخلية (Chlamydomonas reinhardtii)</h4>
+                        <p id="step-detail-desc" class="text-xs text-gray-300 mt-2 leading-relaxed">
+                            تفرز هذه الطحالب بروتينات غشائية تسمى القناة الرودوبسينية (Channelrhodopsin) لتوجيه حركتها نحو الضوء (Phototaxis). هذه البروتينات تعمل كقنوات أيونية تفتح مباشرة بمجرد امتصاص الفوتونات الضوئية.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TAB 3: Interactive Light Switch Simulator -->
+        <div id="content-simulator" class="tab-content hidden space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Controls Side Panel -->
+                <div class="glass-panel p-5 rounded-2xl border border-cyan-500/30 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-white mb-1 flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-cyan-400"></i> لوحة التحكم الضوئية
+                        </h3>
+                        <p class="text-xs text-gray-400 mb-4">قم بتشغيل الضوء الأزرق لمشاهدة استجابة بروتين ChR2 وتوليد الجهد العصبي</p>
+
+                        <!-- Toggle Button -->
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-xs font-semibold text-gray-300 block mb-2">مفتـاح الإضاءة الضوئية (Light Source):</label>
+                                <button onclick="toggleLightSwitch()" id="sim-light-btn" class="w-full py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700">
+                                    <i class="fa-solid fa-power-off"></i> تشغيل الضوء الأزرق (470nm)
+                                </button>
+                            </div>
+
+                            <!-- Wavelength Selector -->
+                            <div>
+                                <label class="text-xs font-semibold text-gray-300 block mb-2">الطول الموجي للضوء (Wavelength):</label>
+                                <select id="sim-wavelength" onchange="updateWavelength()" class="w-full bg-slate-900 border border-gray-700 rounded-xl px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-cyan-500">
+                                    <option value="470" selected>470 نانومتر - أزرق (تنشيط ChR2)</option>
+                                    <option value="590">590 نانومتر - أصفر/برتقالي (تثبيط Halorhodopsin)</option>
+                                    <option value="650">650 نانومتر - أحمر (نفاذية عميقة)</option>
+                                </select>
+                            </div>
+
+                            <!-- Light Intensity Slider -->
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold text-gray-300 mb-1">
+                                    <span>شدة الضوء (Light Intensity):</span>
+                                    <span id="intensity-val" class="text-cyan-400">10 mW/mm²</span>
+                                </div>
+                                <input type="range" id="sim-intensity" min="1" max="20" value="10" oninput="document.getElementById('intensity-val').innerText = this.value + ' mW/mm²'" class="w-full accent-cyan-400 bg-gray-800 rounded-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Indicator Status -->
+                    <div class="p-4 bg-slate-950 rounded-xl border border-gray-800 space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-gray-400">حالة القناة الأيونية (ChR2):</span>
+                            <span id="status-channel" class="font-bold text-red-400">مغلقة (Closed)</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-gray-400">تدفق الأيونات الموجبة (Cations):</span>
+                            <span id="status-ions" class="font-bold text-gray-500">متوقف</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-gray-400">جهد الغشاء (Membrane Voltage):</span>
+                            <span id="status-voltage" class="font-bold text-cyan-400">-70 mV (راحة)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Animation Canvas -->
+                <div class="lg:col-span-2 glass-panel p-5 rounded-2xl border border-cyan-500/20 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-base text-white flex items-center gap-2">
+                                <i class="fa-solid fa-atom text-cyan-400"></i> محاكاة الغشاء الخلوي وتدفق الأيونات
+                            </h3>
+                            <span class="text-xs bg-slate-900 border border-gray-800 text-gray-400 px-2.5 py-1 rounded-lg">رسم توضيحي حقيقي</span>
+                        </div>
+                        
+                        <!-- Main Canvas Simulation -->
+                        <div class="relative w-full h-64 bg-slate-950 rounded-xl overflow-hidden border border-gray-800">
+                            <canvas id="simCanvas" class="w-full h-full block"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Action Potential Real-Time Graph Canvas -->
+                    <div class="mt-4">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs font-bold text-gray-300">مخطط إشارة الجهد العصبي (Action Potential Curve):</span>
+                            <span class="text-xs text-gray-400">الزمن (بالمللي ثانية)</span>
+                        </div>
+                        <div class="w-full h-24 bg-slate-950 rounded-xl overflow-hidden border border-gray-800">
+                            <canvas id="graphCanvas" class="w-full h-full block"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TAB 4: Clinical Applications & Vision Restoration -->
+        <div id="content-clinical" class="tab-content hidden space-y-6">
+            
+            <!-- Vision Restoration Highlight Box -->
+            <div class="glass-panel p-6 rounded-2xl border border-cyan-500/30 bg-gradient-to-r from-slate-900 via-slate-900 to-cyan-950/40">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-20 h-20 rounded-2xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-3xl flex-shrink-0 glow-cyan">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 mb-2">
+                            <i class="fa-solid fa-star"></i> إنجاز سريري فريد (Nature Medicine 2021)
+                        </div>
+                        <h3 class="text-lg font-bold text-white">استعادة البصر: أمل جديد في طب العيون والبصريات</h3>
+                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                            في أمراض التناقص الشبكي مثل **التهاب الشبكية الصباغي (Retinitis Pigmentosa)**، تموت المستقبلات الضوئية وتفقد القدرة على تحويل الضوء لإشارات. يتم استخدام البصريات الوراثية لتجاوز المستقبلات التالفة وتحويل **خلايا العُقد الشَبَكِيَّة (Ganglion cells)** المتبقية إلى خلايا مستجيبة للضوء، مما مكن مريضاً كفِيفاً كلياً من استعادة الرؤية الجزئية وتمييز الأجسام!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neurodegenerative Disease Selector -->
+            <div>
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-disease text-purple-400"></i> مصفوفة التطبيقات السريرية للأمراض التنكسية العصبية
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- Alzheimer's -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800 hover:border-purple-500/50 transition">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">مرض ألزهايمر</h4>
+                                <span class="text-xs text-gray-400">Alzheimer's Disease</span>
+                            </div>
+                        </div>
+                        <ul class="text-xs text-gray-300 space-y-2 bg-slate-900/60 p-3 rounded-xl border border-gray-800">
+                            <li><strong class="text-purple-300">الآلية:</strong> تحفيز تذبذبات جاما (30-60 هرتز).</li>
+                            <li><strong class="text-purple-300">النتيجة:</strong> تقليل ترسبات أُميلويد بيتا (Aβ plaques) وتنشيط الخلايا المترابطة مع الذاكرة.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Parkinson's -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-person-walking"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">الشلل الرعاش</h4>
+                                <span class="text-xs text-gray-400">Parkinson's Disease</span>
+                            </div>
+                        </div>
+                        <ul class="text-xs text-gray-300 space-y-2 bg-slate-900/60 p-3 rounded-xl border border-gray-800">
+                            <li><strong class="text-blue-300">الآلية:</strong> تنشيط خلايا القشرة الحركية (M2) والمسار المباشر.</li>
+                            <li><strong class="text-blue-300">النتيجة:</strong> استعادة الحركة الطبيعية، وتقليل بطء الحركة والتصلب.</li>
+                        </ul>
+                    </div>
+
+                    <!-- ALS -->
+                    <div class="glass-panel p-5 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-child-reaching"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">التصلب الجانبي الضموري</h4>
+                                <span class="text-xs text-gray-400">ALS</span>
+                            </div>
+                        </div>
+                        <ul class="text-xs text-gray-300 space-y-2 bg-slate-900/60 p-3 rounded-xl border border-gray-800">
+                            <li><strong class="text-emerald-300">الآلية:</strong> تحفيز الخلايا العصبية الحركية المعبرة عن ChR2 بالضوء الأزرق.</li>
+                            <li><strong class="text-emerald-300">النتيجة:</strong> منع هزال الضمور العضلي وتحفيز انقباض العضلات المصابة.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Brain Mapping Section -->
+            <div class="glass-panel p-6 rounded-2xl border border-cyan-500/20">
+                <h3 class="text-lg font-bold text-white mb-3">رسم خرائط العقل: فك شفرة الدوائر العصبية</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                    <div class="p-3 bg-slate-950 rounded-xl border border-gray-800">
+                        <h4 class="font-bold text-cyan-400 mb-1">القشرة الجبهية الأمامية</h4>
+                        <p class="text-gray-300">التحفيز يعزز نشاط الخلايا العصبية وتكوين الميَالين (Myelination) وحماية الأعصاب في مرض التصلب المتعدد (MSI).</p>
+                    </div>
+                    <div class="p-3 bg-slate-950 rounded-xl border border-gray-800">
+                        <h4 class="font-bold text-purple-400 mb-1">الجسم المخطط (Striatum)</h4>
+                        <p class="text-gray-300">عزل الدوائر العصبية المباشرة وغير المباشرة لفهم الخلل السلوكي والحركي في مرض هنتنغتون.</p>
+                    </div>
+                    <div class="p-3 bg-slate-950 rounded-xl border border-gray-800">
+                        <h4 class="font-bold text-amber-400 mb-1">ما تحت المهاد واللوزة</h4>
+                        <p class="text-gray-300">تحديد الخلايا المسؤولة بدقة عن السلوكيات الخوفية، العدوانية، وسلوكيات التغذية القسرية.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TAB 5: Comparison Matrix & Timeline -->
+        <div id="content-comparison" class="tab-content hidden space-y-6">
+            
+            <!-- Side by Side Comparison Table -->
+            <div class="glass-panel p-6 rounded-2xl border border-cyan-500/20">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-code-compare text-cyan-400"></i> المقارنة: البصريات الوراثية مقابل التحفيز الكهربائي العميق (DBS)
+                </h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right text-xs">
+                        <thead>
+                            <tr class="border-b border-gray-800 text-gray-400 bg-slate-950">
+                                <th class="p-3">وجه المقارنة</th>
+                                <th class="p-3 text-cyan-400 font-bold">علم البصريات الوراثي (Optogenetics)</th>
+                                <th class="p-3 text-purple-400 font-bold">التحفيز الكهربائي العميق (DBS)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60">
+                            <tr>
+                                <td class="p-3 font-semibold text-gray-300">آلية التحفيز</td>
+                                <td class="p-3 text-gray-200">الضوء (فوتونات دقيقة منسقة)</td>
+                                <td class="p-3 text-gray-400">تيار كهربائي عبر أقطاب مزروعة</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-gray-300">دقة الاستهداف</td>
+                                <td class="p-3 text-cyan-300 font-medium">استهداف نوع خلية واحد محدد جينياً دون تأثير المجاورة</td>
+                                <td class="p-3 text-gray-400">غير محدد، يحفز جميع الأنسجة المجاورة بالقَطْب</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-gray-300">السرعة والاستجابة</td>
+                                <td class="p-3 text-cyan-300 font-medium">تشغيل وإيقاف فوري (أجزاء من الألف من الثانية)</td>
+                                <td class="p-3 text-gray-400">أبطأ، واستجابة الأنسجة عامة وتدريجية</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Historical Discovery Timeline -->
+            <div class="glass-panel p-6 rounded-2xl border border-cyan-500/20">
+                <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-timeline text-amber-400"></i> التسلسل الزمني للاكتشاف والتطوير
+                </h3>
+
+                <div class="relative border-r-2 border-cyan-500/30 mr-4 space-y-6 pr-6">
+                    
+                    <!-- 2002 -->
+                    <div class="relative">
+                        <div class="absolute -right-[31px] top-0 w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-900"></div>
+                        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800">2002 (Science)</span>
+                        <h4 class="font-bold text-white text-sm mt-1">اكتشاف بروتين ChR1</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">اكتشاف بروتين القناة الرودوبسينية الأولى كقناة بروتون في الطحالب.</p>
+                    </div>
+
+                    <!-- 2003 -->
+                    <div class="relative">
+                        <div class="absolute -right-[31px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-900"></div>
+                        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-800">2003 (PNAS)</span>
+                        <h4 class="font-bold text-white text-sm mt-1">اكتشاف ChR2 كقناة كاتيون</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">اكتشاف ChR2 واقتراح إمكانية استخدامه كأداة تحكم جزيئية في الخلايا.</p>
+                    </div>
+
+                    <!-- 2005 -->
+                    <div class="relative">
+                        <div class="absolute -right-[31px] top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-slate-900"></div>
+                        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-purple-950 text-purple-400 border border-purple-800">2005 (Nature Neuroscience)</span>
+                        <h4 class="font-bold text-white text-sm mt-1">الإنجاز الحاسم لفريق دايصروث</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">النجاح في جعل خلايا عصبية للثدييات تطلق إشارات بأمر الضوء وبدقة مللي ثانية.</p>
+                    </div>
+
+                    <!-- 2021 -->
+                    <div class="relative">
+                        <div class="absolute -right-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-4 border-slate-900"></div>
+                        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800">2021 (Nature Medicine)</span>
+                        <h4 class="font-bold text-white text-sm mt-1">أول استعادة جزئية للبصر سريرياً</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">استعادة جزئية لرؤية مريض كفيف المصاب بالتهاب الشبكية الصباغي.</p>
+                    </div>
+
+                    <!-- 2026 -->
+                    <div class="relative">
+                        <div class="absolute -right-[31px] top-0 w-4 h-4 rounded-full bg-yellow-400 border-4 border-slate-900"></div>
+                        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-yellow-950 text-yellow-400 border border-yellow-800">2026 (Nobel Prize)</span>
+                        <h4 class="font-bold text-white text-sm mt-1">جائزة نوبل في الطب</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">تتويج رواد التكنولوجيا لجائزة نوبل في الطب والفيزيولوجيا.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TAB 6: Interactive Quiz -->
+        <div id="content-quiz" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-cyan-500/30 max-w-2xl mx-auto">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-bold text-lg text-white flex items-center gap-2">
+                        <i class="fa-solid fa-vial-circle-check text-yellow-400"></i> اختبر معلوماتك في علم البصريات الوراثي
+                    </h3>
+                    <span id="quiz-score" class="text-xs font-bold bg-cyan-950 text-cyan-300 px-3 py-1 rounded-full border border-cyan-800">النتيجة: 0 / 3</span>
+                </div>
+
+                <div id="quiz-container" class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="p-4 bg-slate-900 rounded-xl border border-gray-800 space-y-2">
+                        <p class="text-sm font-bold text-white">1. ما هو مصدر بروتين ChR2 المستخدم كـ "مفتاح ضوئي"؟</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">أ) خلايا شبكية الإنسان</button>
+                            <button onclick="checkAnswer(this, true)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">ب) الطحالب الخضراء وحيدة الخلية</button>
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">ج) الفيروسات النسيجية</button>
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">د) ألياف العصب البصري</button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="p-4 bg-slate-900 rounded-xl border border-gray-800 space-y-2">
+                        <p class="text-sm font-bold text-white">2. ما الطول الموجي المستعمل عادة لتنشيط مفتاح ChR2 الأيوني؟</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                            <button onclick="checkAnswer(this, true)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">أ) الضوء الأزرق (470nm)</button>
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">ب) الأشعة تحت الحمراء</button>
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">ج) الضوء الأصفر فقط</button>
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">د) الأشعة فوق البنفسجية</button>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="p-4 bg-slate-900 rounded-xl border border-gray-800 space-y-2">
+                        <p class="text-sm font-bold text-white">3. كيف تساعد هذه التقنية مرضى التهاب الشبكية الصباغي (RP)؟</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">أ) إعادة زراعة العين بالكامل</button>
+                            <button onclick="checkAnswer(this, true)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">ب) تحويل خلايا العقد الشبكية إلى خلايا حساسة للضوء</button>
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">ج) زيادة إفراز دموع العين</button>
+                            <button onclick="checkAnswer(this, false)" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-right text-gray-300 border border-gray-700">د) تكبير القرنية بصرياً</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-gray-800 mt-12 py-6 px-4 text-center text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <span class="font-bold text-white">Optoacademy</span>
+                <span>• جميع الحقوق محفوظة © 2026</span>
+                <span class="text-gray-600 hidden sm:inline">|</span>
+                <a href="http://28x2q5jzn6k5.space.minimax.io/?fbclid=IwVERDUAU2JvVleHRuA2FlbQIxMABwZG9mAXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHvXmLN2UxVbH1eBgx8b5hlVxJL1H_FaibCDBPQe2q2a4RxJ65687LLJgqC0H_aem_HYXS9g3kA_dU8U90UI9enQ" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline flex items-center gap-1">
+                    <i class="fa-solid fa-link text-[10px]"></i> منصة أكاديمية البصريات
+                </a>
+                <a href="https://www.facebook.com/share/1H9mBXNV8p/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline flex items-center gap-1">
+                    <i class="fa-brands fa-facebook text-[10px]"></i> صفحة Optoacademy
+                </a>
+            </div>
+            <div>
+                تم الإعداد بواسطة: <strong class="text-cyan-400">أخصائية البصريات رشا حسن</strong> (سلسلة البصريات الحديثة)
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Tab Switcher Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-cyan-600', 'text-white', 'shadow-lg', 'shadow-cyan-600/30');
+                btn.classList.add('bg-slate-900', 'text-gray-400');
+            });
+
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.add('active', 'bg-cyan-600', 'text-white', 'shadow-lg', 'shadow-cyan-600/30');
+            activeBtn.classList.remove('bg-slate-900', 'text-gray-400');
+
+            if(tabId === 'simulator') {
+                initCanvas();
+            }
+        }
+
+        // 4-Step Mechanism Detail Switcher
+        const stepDetails = {
+            1: {
+                title: 'الخطوة 1: الطحالب الخضراء وحيدة الخلية (Chlamydomonas reinhardtii)',
+                desc: 'تفرز هذه الطحالب بروتينات غشائية تسمى القناة الرودوبسينية (Channelrhodopsin) لتوجيه حركتها نحو الضوء. هذه البروتينات تعمل كقنوات أيونية تفتح مباشرة بمجرد امتصاص الفوتونات الضوئية.',
+                icon: 'fa-seedling',
+                color: 'emerald'
+            },
+            2: {
+                title: 'الخطوة 2: العزل الجيني واستخراج الجين (Gene Isolation)',
+                desc: 'يتم استخدام أدوات الهندسة الوراثية لعزل شفرة جين الأوبسين (Opsin Gene) المحددة المسؤولة عن هذا البروتين الحساس للضوء وتهيئته للتعبير في الخلايا العصبية.',
+                icon: 'fa-scissors',
+                color: 'blue'
+            },
+            3: {
+                title: 'الخطوة 3: النواقل الفيروسية الآمنة (Viral Vectors - AAV)',
+                desc: 'يُحمل الجين داخل فيروسات غير ضارة تسمى Adeno-Associated Viruses (AAV). توجه هذه النواقل الجين ببراعة لنوع محدد من خلايا الدماغ أو الشبكية وتدمجه في شفرتها الجينية.',
+                icon: 'fa-virus',
+                color: 'purple'
+            },
+            4: {
+                title: 'الخطوة 4: التحفيز والتحكم الضوئي (Light Stimulation)',
+                desc: 'بمجرد تعبير الخلية عن بروتين ChR2، يتم إدخال ليف بصرى دقيق جداً. عند إرسال ومضة ضوء أزرق، تنفتح القناة ليدخل التيار الأيوني وتشتعل الإشارة العصبية بتطابق تام.',
+                icon: 'fa-wand-magic-sparkles',
+                color: 'cyan'
+            }
+        };
+
+        function highlightStep(stepNum) {
+            document.querySelectorAll('.step-card').forEach((card, idx) => {
+                if (idx + 1 === stepNum) {
+                    card.classList.add('border-cyan-500', 'bg-slate-900');
+                    card.classList.remove('border-gray-800', 'bg-slate-900/60');
+                } else {
+                    card.classList.remove('border-cyan-500', 'bg-slate-900');
+                    card.classList.add('border-gray-800', 'bg-slate-900/60');
+                }
+            });
+
+            const detail = stepDetails[stepNum];
+            document.getElementById('step-detail-title').innerText = detail.title;
+            document.getElementById('step-detail-desc').innerText = detail.desc;
+            document.getElementById('step-detail-icon').innerHTML = `<i class="fa-solid ${detail.icon}"></i>`;
+        }
+
+        // Interactive Simulator Engine
+        let isLightOn = false;
+        let animationFrame;
+        let simCanvas, simCtx, graphCanvas, graphCtx;
+        let ions = [];
+        let voltageHistory = [];
+        let graphX = 0;
+
+        function initCanvas() {
+            simCanvas = document.getElementById('simCanvas');
+            graphCanvas = document.getElementById('graphCanvas');
+            if(!simCanvas || !graphCanvas) return;
+
+            simCanvas.width = simCanvas.offsetWidth;
+            simCanvas.height = simCanvas.offsetHeight;
+            graphCanvas.width = graphCanvas.offsetWidth;
+            graphCanvas.height = graphCanvas.offsetHeight;
+
+            simCtx = simCanvas.getContext('2d');
+            graphCtx = graphCanvas.getContext('2d');
+
+            // Initialize background ions
+            ions = [];
+            for(let i = 0; i < 30; i++) {
+                ions.push({
+                    x: Math.random() * simCanvas.width,
+                    y: Math.random() * (simCanvas.height / 2 - 30),
+                    speedY: 1 + Math.random() * 2,
+                    radius: 4 + Math.random() * 2
+                });
+            }
+
+            voltageHistory = new Array(Math.floor(graphCanvas.width)).fill(-70);
+            renderSimulation();
+        }
+
+        function toggleLightSwitch() {
+            isLightOn = !isLightOn;
+            const btn = document.getElementById('sim-light-btn');
+            
+            if(isLightOn) {
+                btn.innerHTML = `<i class="fa-solid fa-power-off"></i> إيقاف الضوء الأزرق`;
+                btn.className = "w-full py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all bg-cyan-500 text-slate-950 hover:bg-cyan-400 glow-cyan";
+                
+                document.getElementById('status-channel').innerText = 'مفتوحة (Open ChR2)';
+                document.getElementById('status-channel').className = 'font-bold text-cyan-400';
+                document.getElementById('status-ions').innerText = 'تدفق سريع (Na+ Influx)';
+                document.getElementById('status-ions').className = 'font-bold text-emerald-400';
+                document.getElementById('status-voltage').innerText = '+30 mV (إشارة جهد حادة)';
+                document.getElementById('status-voltage').className = 'font-bold text-yellow-400';
+            } else {
+                btn.innerHTML = `<i class="fa-solid fa-power-off"></i> تشغيل الضوء الأزرق (470nm)`;
+                btn.className = "w-full py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700";
+                
+                document.getElementById('status-channel').innerText = 'مغلقة (Closed)';
+                document.getElementById('status-channel').className = 'font-bold text-red-400';
+                document.getElementById('status-ions').innerText = 'متوقف';
+                document.getElementById('status-ions').className = 'font-bold text-gray-500';
+                document.getElementById('status-voltage').innerText = '-70 mV (راحة)';
+                document.getElementById('status-voltage').className = 'font-bold text-cyan-400';
+            }
+        }
+
+        function renderSimulation() {
+            if(!simCtx) return;
+
+            simCtx.clearRect(0, 0, simCanvas.width, simCanvas.height);
+            const w = simCanvas.width;
+            const h = simCanvas.height;
+
+            // 1. Draw Membrane Bilayer
+            const memY = h / 2;
+            simCtx.fillStyle = '#1e293b';
+            simCtx.fillRect(0, memY - 15, w, 30);
+            
+            // Membrane lipid dots
+            simCtx.fillStyle = '#475569';
+            for(let x = 0; x < w; x += 12) {
+                simCtx.beginPath();
+                simCtx.arc(x, memY - 18, 5, 0, Math.PI * 2);
+                simCtx.arc(x, memY + 18, 5, 0, Math.PI * 2);
+                simCtx.fill();
+            }
+
+            // 2. Draw Channel Protein (ChR2) in middle
+            const channelX = w / 2 - 30;
+            const channelWidth = 60;
+            const openOffset = isLightOn ? 18 : 2;
+
+            // Left Protein subunit
+            simCtx.fillStyle = isLightOn ? '#06b6d4' : '#334155';
+            simCtx.beginPath();
+            simCtx.roundRect(channelX - openOffset, memY - 30, 25, 60, 8);
+            simCtx.fill();
+
+            // Right Protein subunit
+            simCtx.beginPath();
+            simCtx.roundRect(channelX + channelWidth - 25 + openOffset, memY - 30, 25, 60, 8);
+            simCtx.fill();
+
+            // Label on Channel
+            simCtx.fillStyle = '#ffffff';
+            simCtx.font = '10px Tajawal';
+            simCtx.fillText('ChR2', channelX + 18, memY + 4);
+
+            // 3. Light Rays if active
+            if(isLightOn) {
+                const grad = simCtx.createLinearGradient(w / 2, 0, w / 2, memY);
+                grad.addColorStop(0, 'rgba(6, 182, 212, 0.8)');
+                grad.addColorStop(1, 'rgba(6, 182, 212, 0.1)');
+                
+                simCtx.fillStyle = grad;
+                simCtx.beginPath();
+                simCtx.moveTo(w / 2 - 40, 0);
+                simCtx.lineTo(w / 2 + 40, 0);
+                simCtx.lineTo(w / 2 + openOffset + 10, memY - 10);
+                simCtx.lineTo(w / 2 - openOffset - 10, memY - 10);
+                simCtx.closePath();
+                simCtx.fill();
+            }
+
+            // 4. Animate Ions Movement
+            ions.forEach(ion => {
+                simCtx.fillStyle = '#f59e0b'; // Sodium / Cation orange glow
+                simCtx.shadowColor = '#fbbf24';
+                simCtx.shadowBlur = 8;
+                simCtx.beginPath();
+                simCtx.arc(ion.x, ion.y, ion.radius, 0, Math.PI * 2);
+                simCtx.fill();
+                simCtx.shadowBlur = 0;
+
+                if(isLightOn) {
+                    // Funnel towards open channel
+                    if(ion.y < memY) {
+                        ion.x += (w / 2 - ion.x) * 0.05;
+                        ion.y += ion.speedY * 2;
+                    } else {
+                        ion.y += ion.speedY;
+                    }
+
+                    if(ion.y > h) {
+                        ion.y = Math.random() * 20;
+                        ion.x = Math.random() * w;
+                    }
+                }
+            });
+
+            // 5. Update Action Potential Graph
+            renderGraph();
+
+            requestAnimationFrame(renderSimulation);
+        }
+
+        function renderGraph() {
+            if(!graphCtx) return;
+            const gw = graphCanvas.width;
+            const gh = graphCanvas.height;
+
+            graphCtx.clearRect(0, 0, gw, gh);
+
+            // Shift voltage history left
+            voltageHistory.shift();
+            let targetV = isLightOn ? 30 : -70;
+            // Add slight noise
+            let currentV = targetV + (Math.random() * 4 - 2);
+            voltageHistory.push(currentV);
+
+            // Draw Grid baseline (-70mV)
+            graphCtx.strokeStyle = '#1e293b';
+            graphCtx.lineWidth = 1;
+            graphCtx.beginPath();
+            const baselineY = gh - (( -70 + 90 ) / 130 * gh);
+            graphCtx.moveTo(0, baselineY);
+            graphCtx.lineTo(gw, baselineY);
+            graphCtx.stroke();
+
+            // Draw Voltage Line
+            graphCtx.strokeStyle = isLightOn ? '#f59e0b' : '#06b6d4';
+            graphCtx.lineWidth = 2;
+            graphCtx.beginPath();
+
+            voltageHistory.forEach((val, x) => {
+                // map val (-90 to +40) to canvas height
+                const y = gh - ((val + 90) / 130 * gh);
+                if(x === 0) graphCtx.moveTo(x, y);
+                else graphCtx.lineTo(x, y);
+            });
+
+            graphCtx.stroke();
+        }
+
+        // Quiz Evaluation Logic
+        let score = 0;
+        const answered = new Set();
+
+        function checkAnswer(btn, isCorrect) {
+            const questionBox = btn.closest('.space-y-2');
+            const qIndex = Array.from(questionBox.parentNode.children).indexOf(questionBox);
+            
+            if(answered.has(qIndex)) return;
+            answered.add(qIndex);
+
+            const allBtns = questionBox.querySelectorAll('button');
+            allBtns.forEach(b => b.disabled = true);
+
+            if(isCorrect) {
+                btn.className = "p-2.5 rounded-lg bg-emerald-600 text-white font-bold text-right text-xs border border-emerald-400";
+                score++;
+            } else {
+                btn.className = "p-2.5 rounded-lg bg-rose-600 text-white font-bold text-right text-xs border border-rose-400";
+            }
+
+            document.getElementById('quiz-score').innerText = `النتيجة: ${score} / 3`;
+        }
+
+        // Window load setup
+        window.addEventListener('resize', () => {
+            if(simCanvas) {
+                simCanvas.width = simCanvas.offsetWidth;
+                simCanvas.height = simCanvas.offsetHeight;
+                graphCanvas.width = graphCanvas.offsetWidth;
+                graphCanvas.height = graphCanvas.offsetHeight;
+            }
+        });
+    </script>
+</body>
+</html>
